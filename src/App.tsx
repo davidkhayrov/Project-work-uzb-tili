@@ -90,7 +90,20 @@ function App() {
         </div>
         <div className="video-stage has-video">
           {videoAvailable ? (
-            <video className="video-player" src="/videos/answer.mp4" controls controlsList="nodownload" disablePictureInPicture onError={() => setVideoAvailable(false)} />
+            
+<video
+  className="video-player"
+  controls
+  playsInline
+  preload="metadata"
+  controlsList="nodownload"
+  disablePictureInPicture
+  onError={() => setVideoAvailable(false)}
+>
+  <source src="/videos/answer.mp4" type="video/mp4" />
+  Ваш браузер не поддерживает воспроизведение этого видео.
+</video>
+
           ) : (
             <div className="video-empty">
               <div className="play-circle"><CirclePlay size={38} strokeWidth={1.5} /></div>
